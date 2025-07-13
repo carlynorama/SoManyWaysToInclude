@@ -1,8 +1,11 @@
 
 ## To Use
 
+```
+zsh ./build_n_run.sh
+```
 
-
+in this directory. 
 
 ## Notes
 
