@@ -1,0 +1,40 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:SoManyWaysToIncludeALib}/SinglePackage",
+            "name": "Debug hello (SinglePackage)",
+            "program": "${workspaceFolder:SoManyWaysToIncludeALib}/SinglePackage/.build/debug/hello",
+            "preLaunchTask": "swift: Build Debug hello (SinglePackage)"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:SoManyWaysToIncludeALib}/SinglePackage",
+            "name": "Release hello (SinglePackage)",
+            "program": "${workspaceFolder:SoManyWaysToIncludeALib}/SinglePackage/.build/release/hello",
+            "preLaunchTask": "swift: Build Release hello (SinglePackage)"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:SoManyWaysToIncludeALib}/SingleBuild_Package",
+            "name": "Debug hello (SingleBuild_Package)",
+            "program": "${workspaceFolder:SoManyWaysToIncludeALib}/SingleBuild_Package/.build/debug/hello",
+            "preLaunchTask": "swift: Build Debug hello (SingleBuild_Package)"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:SoManyWaysToIncludeALib}/SingleBuild_Package",
+            "name": "Release hello (SingleBuild_Package)",
+            "program": "${workspaceFolder:SoManyWaysToIncludeALib}/SingleBuild_Package/.build/release/hello",
+            "preLaunchTask": "swift: Build Release hello (SingleBuild_Package)"
+        }
+    ]
+}
