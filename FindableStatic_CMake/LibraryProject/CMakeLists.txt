@@ -2,12 +2,15 @@ cmake_minimum_required(VERSION 4.0)
 
 set(EXAMPLE_LIBRARY_NAME $ENV{LIBRARY_NAME})
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake/modules)
-include(SwiftInstallModuleSupport)
-include(FindableLibrarySupport)
+
 
 project(DoesItMater LANGUAGES Swift)
 set(CMAKE_Swift_FLAGS "${CMAKE_Swift_FLAGS} -parse-as-library")
 
+enable_language(Swift)
+include(GNUInstallDirs)
+include(SwiftInstallModuleSupport)
+include(FindableLibrarySupport)
 
 add_subdirectory(lib_src)
 
