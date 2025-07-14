@@ -1,24 +1,28 @@
 cmake_minimum_required(VERSION 4.0)
 
+# list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake/modules)
+list(APPEND CMAKE_MODULE_PATH $ENV{SHARED_CMAKE_MODULES_DIR})
+
 ## pull project name from environment (set in build script)
 set(PROJECT_NAME SomeProjectName)
 set(MAIN_TARGET_NAME $ENV{EXE_TARGET_NAME})
 
-
+include(MYInstallDirs)
+MyInstallDirs_set_common_dir_values()
+message("------ BINDIR: ${CMAKE_INSTALL_BINDIR}")
+message("------ LIBDIR: ${CMAKE_INSTALL_LIBDIR}")
+message("------ INCLUDEDDIR: ${CMAKE_INSTALL_INCLUDEDIR}")
 
 project(${PROJECT_NAME} 
     LANGUAGES Swift
 )
 
-enable_language(Swift)
-include(GNUInstallDirs)
-
 set(EXAMPLE_LIBRARY_NAME $ENV{LIBRARY_NAME})
 # set(EXAMPLE_LIBRARY_DIR $ENV{TEST_INSTALL_DIR}/${CMAKE_INSTALL_BIN})
-set(EXAMPLE_LIBRARY_DIR $ENV{TEST_INSTALL_DIR}/lib)
+set(EXAMPLE_LIBRARY_DIR $ENV{TEST_INSTALL_DIR})
 
 find_package(${EXAMPLE_LIBRARY_NAME} 2.0.1 EXACT
-             HINTS $ENV{TEST_INSTALL_DIR}/lib
+             HINTS $ENV{TEST_INSTALL_DIR}/${CMAKE_INSTALL_LIBDIR}
 )
 
 set(FOUND_FLAG ${${EXAMPLE_LIBRARY_NAME}_FOUND})
@@ -29,11 +33,10 @@ ELSE (${FOUND_FLAG})
    MESSAGE(FATAL_ERROR "-------------Could not locate ${EXAMPLE_LIBRARY_NAME}.-------------")
 ENDIF (${FOUND_FLAG})
 
-
 # add_library(${EXAMPLE_LIBRARY_NAME} STATIC IMPORTED)
 # set_target_properties(${EXAMPLE_LIBRARY_NAME} PROPERTIES
-#     IMPORTED_LOCATION               "${EXAMPLE_LIBRARY_DIR}/lib${EXAMPLE_LIBRARY_NAME}.a"
-#     INTERFACE_INCLUDE_DIRECTORIES   "${EXAMPLE_LIBRARY_DIR}/${EXAMPLE_LIBRARY_NAME}.swiftmodule"
+#     IMPORTED_LOCATION               "${EXAMPLE_LIBRARY_DIR}/${CMAKE_INSTALL_LIBDIR}/lib${EXAMPLE_LIBRARY_NAME}.a"
+#     INTERFACE_INCLUDE_DIRECTORIES   "${EXAMPLE_LIBRARY_DIR}/${CMAKE_INSTALL_LIBDIR}/${EXAMPLE_LIBRARY_NAME}.swiftmodule"
 # )
 
 add_subdirectory("hello_src/")

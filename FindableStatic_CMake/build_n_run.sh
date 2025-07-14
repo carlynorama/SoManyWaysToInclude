@@ -4,6 +4,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 REPOROOT=$(git rev-parse --show-toplevel)
 SRCROOT=$SCRIPT_DIR
 
+export SHARED_CMAKE_MODULES_DIR=$SCRIPT_DIR/shared/cmake/modules
 export TEST_INSTALL_DIR=$SCRIPT_DIR/FAKE/INSTALL/LOCATION
 
 SRC_LIB_DIR=$SRCROOT/LibraryProject

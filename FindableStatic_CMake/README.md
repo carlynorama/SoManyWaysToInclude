@@ -20,4 +20,11 @@ This example is missing many of the niceties that a real static library should p
 - https://cmake.org/cmake/help/latest/search.html?q=SWIFT_
 - https://github.com/swiftlang/swift-corelibs-foundation/blob/0e489e921d7325d220dab368d174d9b7bcb5db75/cmake/modules/FoundationSwiftSupport.cmake#L27
 
-- is it hello_src/CMakeFiles/hello.dir//output-file-map.json
+//YES!!!
+- is it hello_src/CMakeFiles/hello.dir//output-file-map.json ???
+- /Users/${USER}/Developer/GitHub/SoManyWaysToInclude/FindableStatic_CMake/MainProject/build/hello_src/CMakeFiles/hello.dir/output-file-map.json
+- /Users/${USER}/Developer/GitHub/SoManyWaysToInclude/FindableStatic_CMake/LibraryProject/build/lib_src/CMakeFiles/MyFancyResponseHandler.dir/output-file-map.json
+
+- /Users/${USER}/.pico-sdk/cmake/v3.28.6/CMake.app/Contents/share/cmake-3.28/Modules/GNUInstallDirs.cmake
+- /opt/homebrew/Cellar/cmake/4.0.3/share/cmake/Modules/GNUInstallDirs.cmake
+
