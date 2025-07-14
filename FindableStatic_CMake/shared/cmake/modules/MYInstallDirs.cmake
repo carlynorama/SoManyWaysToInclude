@@ -20,6 +20,11 @@
   # CMAKE_INSTALL_MANDIR
   # CMAKE_INSTALL_DOCDIR
 
+macro(MyInstallDirs_set_swift_lib_dir REQ_VAR)
+  
+endmacro()
+
+
 # macro(MyInstallDirs_set_common_dir_values PREFIX SUFFIX)
 macro(MyInstallDirs_set_common_dir_values)
 _MyInstallDirs_force_set(CMAKE_INSTALL_LIBDIR "lib"

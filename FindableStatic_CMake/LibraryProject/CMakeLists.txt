@@ -7,8 +7,7 @@ list(APPEND CMAKE_MODULE_PATH $ENV{SHARED_CMAKE_MODULES_DIR})
 project(DoesItMater LANGUAGES Swift)
 set(CMAKE_Swift_FLAGS "${CMAKE_Swift_FLAGS} -parse-as-library")
 
-# enable_language(Swift)
-# include(GNUInstallDirs)
+
 include(MYInstallDirs)
 MyInstallDirs_set_common_dir_values()
 message("------ BINDIR: ${CMAKE_INSTALL_BINDIR}")
@@ -16,6 +15,10 @@ message("------ LIBDIR: ${CMAKE_INSTALL_LIBDIR}")
 message("------ INCLUDEDDIR: ${CMAKE_INSTALL_INCLUDEDIR}")
 
 include(SwiftInstallModuleSupport)
+setup_swift_install_vars()
+message("------ SWIFT_SYSTEM_NAME: ${SWIFT_SYSTEM_NAME}")
+message("------ Swift_MODULE_DIRECTORY: ${CMAKE_Swift_MODULE_DIRECTORY}")
+
 include(FindableLibrarySupport)
 
 add_subdirectory(lib_src)
