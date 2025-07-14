@@ -1,6 +1,6 @@
 @PACKAGE_INIT@
 
-set(PACKAGE_NAME MyFancyResponder)
+set(PACKAGE_NAME MyFancyResponseHandler)
 
 include("${CMAKE_CURRENT_LIST_DIR}/${PACKAGE_NAME}Targets.cmake")
 

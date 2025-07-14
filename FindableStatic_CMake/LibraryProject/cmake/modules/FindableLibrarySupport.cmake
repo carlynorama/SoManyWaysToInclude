@@ -66,4 +66,4 @@ function(enable_non_install this_target)
         FILE "${CMAKE_CURRENT_BINARY_DIR}/cmake/${this_target}Targets.cmake"
         NAMESPACE ${this_target}::
     )
-endfunction(enable_cross_)
+endfunction(enable_non_install this_target)
